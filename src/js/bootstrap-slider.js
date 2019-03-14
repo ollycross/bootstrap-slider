@@ -185,10 +185,10 @@ const windowIsDefined = (typeof window === "object");
 			        return $(this);
 			      });
 
-            if(objects.length === 1) {
-              return objects[0];
-            }
-            return objects;
+			      if(objects.length === 1) {
+			      	return objects[0];
+			      }
+			      return objects;
 			    }
 			  };
 
