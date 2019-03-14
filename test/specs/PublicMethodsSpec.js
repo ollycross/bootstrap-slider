@@ -2,6 +2,21 @@ describe("Public Method Tests", function() {
   var testSlider;
 
   describe("slider constructor", function() {
+    describe("returns a jQuery object if it is called on a jQuery object with one or none matching elements", function() {
+      it("returns a jQuery object if it is called on with no matching elements", function() {
+        testSlider = $emptyJqueryObject = $();
+        expect($emptyJqueryObject.slider() instanceof jQuery).toBe(true);
+      });
+      it("returns a jQuery object if it is called on with one matching element", function() {
+        testSlider = $singleJqueryObject = $('#testSlider1');
+        expect($singleJqueryObject.slider() instanceof jQuery).toBe(true);
+      });
+      it("returns a jQuery object if it is called on with multiple matching elements", function() {
+        testSlider = var $multipleJqueryObject = $('#testSlider1, #testSlider2');
+        expect($multipleJqueryObject.slider() instanceof jQuery).toBe(true);
+      });
+    });
+
     it("reads and sets the 'id' attribute of the slider instance that is created", function() {
       var sliderId = "mySlider";
 
